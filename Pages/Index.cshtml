@@ -1,0 +1,117 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "ToroIA";
+}
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 2rem;
+        background-color: #121212;
+        color: #f0f0f0;
+    }
+
+    h1 {
+        text-align: center;
+        margin-bottom: 2rem;
+        color: #ffffff;
+    }
+
+    form {
+        max-width: 600px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        background-color: #1e1e1e;
+        padding: 1rem;
+        border-radius: 0.5rem;
+    }
+
+    label {
+        color: #cccccc;
+    }
+
+    textarea {
+        width: 100%;
+        padding: 0.5rem;
+        font-size: 1rem;
+        resize: vertical;
+        background-color: #2b2b2b;
+        color: #f0f0f0;
+        border: 1px solid #555;
+        border-radius: 0.3rem;
+    }
+
+    .button-group {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    button {
+        flex: 1 1 auto;
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+        cursor: pointer;
+        background-color: #3a3a3a;
+        color: #f0f0f0;
+        border: none;
+        border-radius: 0.3rem;
+        transition: background-color 0.2s;
+    }
+
+    button:hover {
+        background-color: #5a5a5a;
+    }
+
+    .file-input {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    input[type="file"] {
+        color: #f0f0f0;
+    }
+
+    .response-box {
+        margin-top: 2rem;
+        padding: 1rem;
+        border: 1px solid #555;
+        border-radius: 0.5rem;
+        background: #1e1e1e;
+    }
+
+    .response-box h3 {
+        color: #ffffff;
+    }
+</style>
+
+<h1>Olá, Bem vindo a ToroIA</h1>
+
+<form method="post" enctype="multipart/form-data">
+    <label for="UserMessage">Mensagem:</label>
+    <textarea id="UserMessage" name="UserMessage" rows="4">@Model.UserMessage</textarea>
+
+    <div class="button-group">
+        <button type="submit" name="action" value="chat">Enviar</button>
+        <button type="submit" name="action" value="explain">Explica esse termo</button>
+        <button type="submit" name="action" value="sentiment">Análise de Sentimento</button>
+    </div>
+
+    <label>Arquivo para resumo (PDF/TXT):</label>
+    <div class="file-input">
+        <input type="file" name="UploadedFile" />
+        <button type="submit" name="action" value="summarize">Gerar Resumo</button>
+    </div>
+</form>
+
+@if (!string.IsNullOrWhiteSpace(Model.Response))
+{
+    <div class="response-box">
+        <h3>Resposta:</h3>
+        <p>@Model.Response</p>
+    </div>
+}

@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "gNX1XvGebcs=",
+  "success": true,
+  "projectFilePath": "c:\\Users\\Usuário\\Desktop\\gitChat\\gitChat\\gitChat.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Usuário\\.nuget\\packages\\csharptojsonschema\\3.10.1\\csharptojsonschema.3.10.1.nupkg.sha512",
+    "C:\\Users\\Usuário\\.nuget\\packages\\ollama\\1.15.0\\ollama.1.15.0.nupkg.sha512",
+    "C:\\Users\\Usuário\\.nuget\\packages\\system.text.json\\9.0.0\\system.text.json.9.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
