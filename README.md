@@ -15,5 +15,5 @@ Simulações de Problemas Reais: Projetos e cenários para ajudar a consolidar o
 
 Clone o repositório:
 
-git clone https://github.com/seuusuario/ToroIA.git
+git clone https://github.com/TorinJob/ToroIA
 cd ToroIA
